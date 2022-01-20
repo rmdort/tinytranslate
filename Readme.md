@@ -2,6 +2,14 @@
 
 A tiny hook to manage translations in your React Application
 
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/) ![node workflow](https://github.com/rmdort/tinytranslate/actions/workflows/node.js.yml/badge.svg)
+
+## Features
+
+1. Support for deeply nested objects. Eg: `translate('profile.top.heading')`
+2. 100% Test coverage
+3. Fully controlled and stateless
+
 ## Install
 
 ```
@@ -51,8 +59,3 @@ const Header = () => {
   return <>{translate('hello'}</>
 }
 ```
-
-## Features
-
-1. Support for deeply nested objects. Eg: `translate('profile.top.heading')`
-2. 100% Test coverage
