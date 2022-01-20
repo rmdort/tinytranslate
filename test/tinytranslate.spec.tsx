@@ -36,7 +36,7 @@ describe("tinytranslate", () => {
 
   it("will render translation based on locale", () => {
     const Child = () => {
-      const { translate } = useTranslation();
+      const translate = useTranslation();
       return (
         <>
           {translate("hello")}

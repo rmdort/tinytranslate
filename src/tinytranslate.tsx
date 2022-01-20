@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useCallback } from "react";
 import { createContext, FC, useContext } from "react";
 import { supplant, translateKey } from "./helpers";
 
@@ -20,22 +20,21 @@ export interface TranslationMessages {
 
 export type TranslationData = Record<string, unknown>;
 
-export type TranslationContextProps = {
-  translate: (key: string, data?: TranslationData) => string | undefined;
-};
+export type TranslationContextProps = (
+  key: string,
+  data?: TranslationData
+) => string | undefined;
 
 export const TranslationProvider: FC<TranslationProviderProps> = ({
   children,
   translations,
   locale,
 }) => {
-  const contextValue = useMemo(
-    () => ({
-      translate: (key: string, data?: TranslationData) => {
-        const value = translateKey(key, translations[locale].messages);
-        return supplant(value, data);
-      },
-    }),
+  const contextValue = useCallback(
+    (key: string, data?: TranslationData) => {
+      const value = translateKey(key, translations[locale].messages);
+      return supplant(value, data);
+    },
     [translations, locale]
   );
   return (

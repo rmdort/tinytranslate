@@ -53,8 +53,10 @@ const App = () => {
 3. Use useTranslation hook
 
 ```
+import { useTranslation } from 'tinytranslate'
+
 const Header = () => {
-  const { translate } = useTranslation()
+  const translate = useTranslation()
 
   return <>{translate('hello'}</>
 }
