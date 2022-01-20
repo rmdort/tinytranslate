@@ -12,7 +12,7 @@ A tiny hook to manage translations in your React Application
 
 ## Install
 
-```
+```sh
 yarn add tinytranslate
 
 OR
@@ -24,35 +24,34 @@ npm i tinytranslate --save
 
 1. Define your translations
 
-```
+```javascript
 const translations = {
   en: {
-    locale: 'en-US',
+    locale: "en-US",
     messages: {
-      hello: 'Hello {name}'
-    }
+      hello: "Hello {name}",
+    },
   },
-}
+};
 ```
 
 2. Add TranslationProvider to your app
 
-```
-import { TranslationProvider } from 'tinytranslate'
+```javascript
+import { TranslationProvider } from "tinytranslate";
 
 const App = () => {
   return (
-    <TranslationProvider translations={translations} locale='en'>
+    <TranslationProvider translations={translations} locale="en">
       <Header />
     </TranslationProvider>
-  )
-}
-
+  );
+};
 ```
 
 3. Use useTranslation hook
 
-```
+```javascript
 import { useTranslation } from 'tinytranslate'
 
 const Header = () => {
